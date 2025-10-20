@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Поиск по kino-teatr.ru</title>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get("q") || "";
-    if (query) {
-      window.location.href = "https://www.kino-teatr.ru/search/?q=" + encodeURIComponent(query);
-    } else {
-      document.write("<p>Введите поисковый запрос...</p>");
-    }
-  </script>
+<meta charset="UTF-8">
+<title>Поиск kino-teatr.ru</title>
+<meta http-equiv="refresh" content="0; url=https://www.kino-teatr.ru/search/?q=">
+<script>
+  const q = new URLSearchParams(window.location.search).get("q") || "";
+  if (q) {
+    window.location.href = "https://www.kino-teatr.ru/search/?q=" + encodeURIComponent(q);
+  } else {
+    document.write("Введите запрос в адресную строку, например:<br><br><code>?q=Солин</code>");
+  }
+</script>
 </head>
-<body>
-  <p>Перенаправление на kino-teatr.ru...</p>
-</body>
+<body></body>
 </html>
