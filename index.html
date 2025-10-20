@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Поиск kino-teatr.ru</title>
+</head>
+<body>
+<form id="f" action="https://www.kino-teatr.ru/search/" method="post" target="_self">
+  <input type="hidden" name="q" id="q">
+</form>
+<script>
+  const p = new URLSearchParams(window.location.search);
+  document.getElementById("q").value = p.get("q") || "";
+  document.getElementById("f").submit();
+</script>
+</body>
+</html>
