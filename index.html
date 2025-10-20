@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>Поиск kino-teatr.ru</title>
+  <meta charset="UTF-8">
+  <title>Поиск по kino-teatr.ru</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q") || "";
+    if (query) {
+      window.location.href = "https://www.kino-teatr.ru/search/?q=" + encodeURIComponent(query);
+    } else {
+      document.write("<p>Введите поисковый запрос...</p>");
+    }
+  </script>
 </head>
 <body>
-<form id="f" action="https://www.kino-teatr.ru/search/" method="post" target="_self">
-  <input type="hidden" name="q" id="q">
-</form>
-<script>
-  const p = new URLSearchParams(window.location.search);
-  document.getElementById("q").value = p.get("q") || "";
-  document.getElementById("f").submit();
-</script>
+  <p>Перенаправление на kino-teatr.ru...</p>
 </body>
 </html>
